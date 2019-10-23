@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table of Employees</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var url = "http://localhost:1234";
+			$.get(url, (data)=>{
+				$.each(data, (i, e)=>{
+					$("ol").append("<li>" + e.empName +"</li>");
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<ol></ol>
+</body>
+</html>

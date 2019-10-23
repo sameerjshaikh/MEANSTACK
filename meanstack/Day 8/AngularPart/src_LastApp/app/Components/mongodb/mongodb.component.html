@@ -1,0 +1,24 @@
+<h1>MongoDB Data from REST</h1>
+<div>
+    <table border="1">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Address</th>
+            <th>Options</th>
+        </tr>
+
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empAddress}}</td>
+            <td>
+ <!--                <a (click)="onSelected()" [routerLink]="[ '/detail', emp ]" >Edit</a> -->
+                <a (click)="onSelected(emp)">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <app-emp-detail (onSave)="display($event)" [selected]="selected"></app-emp-detail>
+</div>

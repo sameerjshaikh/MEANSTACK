@@ -1,0 +1,15 @@
+<div *ngIf="selected">
+<h1>Details of the Employee</h1>
+<p>
+    EmpID : <{{selected.empId}}>
+</p>
+<p>
+    EmpName : <input [(ngModel)]="selected.empName">
+</p>
+<p>
+    EmpAddress : <input [(ngModel)]="selected.empAddress">
+</p>
+<p>
+    <button (click)="onClick()">Save changes</button>
+</p>
+</div>
