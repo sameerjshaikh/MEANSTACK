@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript">
+		function adFun(first, second) {
+			return first+second;
+         // alert(res);
+		}
+		function subFun(first, second) {
+
+		   return first-second;
+         // alert(res);
+		}
+		function mulFun(first, second) {
+
+		return first*second;
+         // alert(res);
+		}
+		function divFun(first, second) {
+			
+			return first/second;
+         // alert(res);
+		}
+ 
+         function callMathfunc() {
+         	
+         	var fir=parseInt(prompt("enter first value"));
+         	var sec=parseInt(prompt("enter second value"));
+            
+            var op=prompt("enter oprator + - * /");
+
+             switch (op)
+             {
+             	
+                case "+":
+                       var res = adFun(fir,sec); 
+                       alert(res);
+                         break;
+                case "-":
+                          var res = subFun(fir,sec); 
+                          alert(res);
+                           break;
+                case "*":
+                         var res =  mulFun(fir,sec);
+                         alert(res);
+                           break;
+                case "/":
+                         var res = divFun(fir,sec);
+                         alert(res); 
+                           break;
+                default:
+                        alert("wrong input");
+             }
+         }
+         callMathfunc();
+		
+		
+		
+		
+
+
+
+	</script>
+</head>
+<body>
+
+<!-- <input type="text" name="firstVal" id="firstVal">
+<input type="text" name="firstVal" id="secondVal">
+<p>Result: <span id="result"></span></p> -->
+</body>
+</html>

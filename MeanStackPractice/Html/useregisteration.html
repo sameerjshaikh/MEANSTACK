@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+
+    
+	<div >
+		<p>name:  <input type="text" id="name" name="name"><br><br></p>
+		<p>email: <input type="text" id ="email" name="email"></p>
+		<p>age:  <input type="text" id="age" name="age"><br><br></p>
+		<p>salary: <input type="text" id ="salary" name="salary"></p>
+		<button id ="button" value="save" onclick="saveData()">save</button>
+	</div>
+    <div>
+	    <h3>Data entered by user</h3>
+		<p id="nameData"></p><br><br>
+	</div>
+	<script>
+		
+		function saveData() 
+		{
+			var name1=document.getElementById("name").value;//geting the value form input field.
+			var email1=document.getElementById("email").value;
+			var age=document.getElementById("age").value;//geting the value form input field.
+			var salary=document.getElementById("salary").value;
+			
+		document.getElementById("nameData").innerHTML="Name entered is :"+name1+"<br>"+"email entered is :"+email1+"<br>"+"Age is "+age+"<br>"+"Salary is "+salary;//displaying the values.
+		//document.getElementById("emailData").innerHTML=email1;
+		}
+		// function getId(id) {
+		// 	return (document.getElementById("name").value);
+		// }
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>book registration </title>
+<script type="text/javascript" src="D:\Modules\MeanStack\MeanStackPractice\scripts\book.js"></script>
+
+
+</head>
+<body>
+    <div >
+		<p>Id:  <input type="text" id="id" name="id"><br><br></p>
+		<p>name: <input type="text" id ="name" name="name"></p>
+		<p>author:  <input type="text" id="author" name="author"><br><br></p>
+		<p>price: <input type="text" id ="price" name="price"></p>
+		<button id ="button" value="save" onclick="insertDataa()">save</button>
+	</div>
+	<div>
+	     <table id="tbl" border="2px">
+	       <tr>
+	       	<td>Id</td>
+	       	<td>Name</td>
+	       	<td>Author</td>
+	       	<td>Price</td>
+	       	<td>Edit</td>
+	       </tr>
+	     </table>
+	</div>
+
+<script>
+		
+		var Bksreposit=new BookCollection();
+		var j=0;
+
+		function insertDataa() 
+		{
+		    var id=document.getElementById("id").value;//geting the value form input field.
+			var name=document.getElementById("name").value;
+			var author=document.getElementById("author").value;//geting the value form input field.
+			var price=document.getElementById("price").value;
+
+			var bookData=new Book(id,name,author,price);
+
+            Bksreposit.insertBook(bookData);
+            displayRecord();
+		}
+
+		function displayRecord()              //get all record , itrate using for each and add row to table
+		{ 
+			var data1=Bksreposit.getAllBook();
+			for (var i = j; i <data1.length; i++) 
+			{
+				var x=data1[i];
+
+				var ro="<tr><td>" + x.Id + "</td><td>";
+				ro+=x.Name+"</td><td>";
+				ro+=x.Author+"</td><td>";
+				ro+=x.Price+"</td><td>";
+				ro+="<a href='#' class='edit'>Edit</td></tr>";
+
+				alert( x.Id+ x.Name + x.Author);
+
+				document.getElementById("tbl").innerHTML+=ro;
+
+				window.j++;
+			}
+		}
+	</script>
+</body>
+</html>
